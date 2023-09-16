@@ -17,17 +17,16 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
                         {% for record in records %}
-                        <td>{{ record.first_name }} {{ record.last_name }}</td>
-                        <td>{{ record.email }}</td>
-                        <td>{{ record.phone }}</td>
-                        <td>{{ record.address }}</td>
-                        <td>{{ record.zipcode }}</td>
-                        <td>{{ record.created_at }}</td>
-                        <td></td>
+                        <tr>
+                            <td>{{ record.first_name }} {{ record.last_name }}</td>
+                            <td>{{ record.email }}</td>
+                            <td>{{ record.phone }}</td>
+                            <td>{{ record.address }}</td>
+                            <td>{{ record.zipcode }}</td>
+                            <td>{{ record.created_at }}</td>
+                        </tr>
                         {% endfor %}
-                      </tr>
                     </tbody>
                   </table>
         {% endif %}
