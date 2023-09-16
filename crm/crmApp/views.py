@@ -89,4 +89,4 @@ def add_record(request):
     
 
 def edit_record(request, id):
-    return render(request, 'request.html', {})
+    return render(request, 'edit_record.html', {})
