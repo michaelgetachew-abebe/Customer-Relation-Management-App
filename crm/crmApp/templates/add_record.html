@@ -10,7 +10,10 @@
             {{ form.as_p }}
 
             <br/>
-            <button type="submit" class="btn btn-secondary">Add</button>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success">Add</button>
+                <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+            </div>
         </form>
     </div>
 {% endblock%}
