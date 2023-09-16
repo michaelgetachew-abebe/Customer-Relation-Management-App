@@ -4,10 +4,32 @@
     {% if user.is_authenticated %}
         <h1>Hello {{user.username}}</h1>
         {% if records %}
-            {% for record in records %}
-                {{ record }}
-                <br/>
-            {% endfor %}
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Zip Code</th>
+                        <th scope="col">Created At</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        {% for record in records %}
+                        <td>{{ record.first_name }} {{ record.last_name }}</td>
+                        <td>{{ record.email }}</td>
+                        <td>{{ record.phone }}</td>
+                        <td>{{ record.address }}</td>
+                        <td>{{ record.zipcode }}</td>
+                        <td>{{ record.created_at }}</td>
+                        <td></td>
+                        {% endfor %}
+                      </tr>
+                    </tbody>
+                  </table>
         {% endif %}
     {% else %}
         <div class="col-md-6 offset-md-3">
