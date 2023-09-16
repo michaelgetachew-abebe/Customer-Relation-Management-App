@@ -89,4 +89,14 @@ def add_record(request):
     
 
 def edit_record(request, id):
-    return render(request, 'edit_record.html', {})
+    if request.user.is_authenticated:
+        this_record = Record.objects.get(id=id)
+        form = AddRecordForm(request.POST or None, instance=this_record)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Successfully updated ... ")
+            return redirect('home')
+        return render(request, 'edit_record.html', {'form': form})
+    else:
+        messages.error(request, "You must be logged in to complete this action ... ")
+        return redirect('home')
