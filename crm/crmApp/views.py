@@ -55,3 +55,7 @@ def customer_record(request, id):
     else:
         messages.error(request, "You must be logged in to view this page ...")
         return redirect('home')
+    
+
+def delete(request, id):
+    pass

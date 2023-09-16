@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content%}
+<br/>
 <div class="col-md-6 offset-md-3">
     <div class="card">
-        <div class="card-header">
+        <div class="card-header border-0" style="background-color: rgb(33, 37, 41); color: whitesmoke;">
           <strong>{{ customer.first_name }} {{customer.last_name}}</strong>
         </div>
         <div class="card-body">
-          <p class="card-text"><strong>Email:</strong> {{customer.email}}</p>
+          <p class="card-text stripped"><strong>Email:</strong> {{customer.email}}</p>
           <p class="card-text"><strong>Phone:</strong> {{customer.phone}}</p>
           <p class="card-text"><strong>Address:</strong> {{customer.address}}</p>
           <p class="card-text"><strong>City:</strong> {{customer.city}}</p>
           <p class="card-text"><strong>State:</strong> {{customer.state}}</p>
           <p class="card-text"><strong>Zip Code:</strong> {{customer.zipcode}}</p>
         </div>
+      </div>
+      <br/>
+      <div class="d-flex justify-content-between">
+        <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+        <a href="{% url 'home' %}" class="btn btn-danger">Delete</a>
       </div>
 </div>
 
