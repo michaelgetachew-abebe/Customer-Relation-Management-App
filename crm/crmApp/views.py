@@ -86,3 +86,7 @@ def add_record(request):
     else:
         messages.error(request, "You must be logged in to complete this action ... ")
         return redirect('home')
+    
+
+def edit_record(request, id):
+    return render(request, 'request.html', {})
