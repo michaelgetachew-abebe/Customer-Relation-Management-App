@@ -2,7 +2,6 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <h1>Hello {{user.username}}</h1>
         {% if records %}
                 <table class="table">
                     <thead>
@@ -19,6 +18,7 @@
                     <tbody>
                         {% for record in records %}
                         <tr>
+                            <td>{{ record.id }}</td>
                             <td>{{ record.first_name }} {{ record.last_name }}</td>
                             <td>{{ record.email }}</td>
                             <td>{{ record.phone }}</td>
