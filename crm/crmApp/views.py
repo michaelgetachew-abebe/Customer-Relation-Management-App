@@ -58,4 +58,13 @@ def customer_record(request, id):
     
 
 def delete(request, id):
-    pass
+    
+    if request.user.is_authenticated:
+        Record.objects.delete(id=id)
+
+        customer = Record.objects.all()
+        return render(request, 'home.html', {'customer': customer})
+    
+    else:
+        messages.error(request, "You must be logged in to complete this action ...")
+        return redirect('home')
